@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -54,7 +55,25 @@ public class Main {
         return result;
 
     }
+    public static void miniMaxSum(List<Integer> arr) {
+
+        // Write your code here
+        Collections.sort(arr);
+        long minSum = 0;
+        for (int i = 0; i < 4; i++) {
+            minSum += arr.get(i);
+        }
+        long maxSum = 0;
+        for (int i = 1; i < 5; i++) {
+            maxSum += arr.get(i);
+
+        }
+        System.out.println(minSum + " " + maxSum);
+
+
+    }
 
 }
 
 }
+
