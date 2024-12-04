@@ -27,5 +27,12 @@ public class Main {
         System.out.printf("%.6f%n", (double) negatives / n);
         System.out.printf("%.6f%n", (double) zeros / n);
     }
+    public static int simpleArraySum(List<Integer> ar) {
+        int total = 0;
+        for (int i = 0; i < ar.size(); i++) {
+            total += ar.get(i); // Add the actual array element
+        }
+        return total;
+    }
 
 }
