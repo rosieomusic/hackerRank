@@ -72,6 +72,29 @@ public class Main {
 
 
     }
+    public static String timeConversion(String s) {
+        // Write your code here
+        String amPM = s.substring(s.length() -2 );
+        String hour = s.substring(0, 2);
+        String minuteSecond = s.substring(2,  s.length() - 2);
+
+        int hourInt = Integer.parseInt(hour);
+        if(amPM.equals("AM")){
+            if(hourInt == 12) {
+                hour = "00";
+            }
+        } else{
+            if(hourInt != 12){
+                hour = String.format("%02d", hourInt + 12);
+            }
+        }
+
+        return hour + minuteSecond;
+
+    }
+
+}
+
 
 }
 
