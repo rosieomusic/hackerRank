@@ -126,7 +126,27 @@ public class Main {
         }
         return revNum;
     }
+
+    public int solution(int[] A) {
+        HashSet<Integer> set = new HashSet<>();
+
+        // Add only positive integers to the set
+        for (int num : A) {
+            if (num > 0) {
+                set.add(num);
+            }
+        }
+
+        // Start checking from 1 upwards to find the smallest missing positive integer
+        int smallest = 1;
+        while (set.contains(smallest)) {
+            smallest++;
+        }
+
+        return smallest;
+    }
 }
+
 
 
 
