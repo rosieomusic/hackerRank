@@ -198,6 +198,35 @@ public class Main {
 
         return result;
     }
+    public List<Integer> unusualTraversal(int[] array) {
+        // TODO: implement this function
+        ArrayList<Integer> insaneArray = new ArrayList<>();
+        int mid = array.length / 2;
+        int left = mid - 1;
+        int right = mid + 1;
+        insaneArray.add(array[mid]);
+
+        while(left >= 0 || right < array.length){
+            if(left >= 1){
+                insaneArray.add(array[left - 1]);
+                insaneArray.add(array[left]);
+                left-=2;
+            }else if(left == 0){
+                insaneArray.add(array[left]);
+                left--;
+            }
+            if(right < array.length-1){
+                insaneArray.add(array[right]);
+                insaneArray.add(array[right + 1]);
+                right+=2;
+            }else if (right == array.length-1){
+                insaneArray.add(array[right]);
+                right++;
+            }
+
+        }
+        return insaneArray;
+    }
 
 }
 
