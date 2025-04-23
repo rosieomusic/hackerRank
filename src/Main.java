@@ -145,6 +145,24 @@ public class Main {
 
         return smallest;
     }
+
+    public int solution(int n) {
+        int digitProduct = 1;
+        boolean hasOddDigits = false;
+        // TODO: implement
+        while(n > 0){
+            int digit = n % 10;
+            if(digit % 2 != 0){
+                digitProduct *=digit;
+                hasOddDigits = true;
+            }
+            n/=10;
+        }
+        if(hasOddDigits){
+            return 0;
+        }
+        return digitProduct;
+    }
 }
 
 
