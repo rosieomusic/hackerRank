@@ -163,6 +163,22 @@ public class Main {
         }
         return digitProduct;
     }
+
+    public int result(int n) {
+        // TODO: implement the solution here
+        int digit = 0;
+        int revNum = 0;
+        int multiplier = 10;
+        while (n > 0) {
+            digit = n % 10;
+            revNum*=multiplier;
+            revNum+=digit;
+            n/=10;
+
+        }
+        return revNum; // Placeholder return
+    }
+
 }
 
 
