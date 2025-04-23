@@ -178,6 +178,26 @@ public class Main {
         }
         return revNum; // Placeholder return
     }
+    public List<String> paring(List<Integer> numbers) {
+        // TODO: Implement the function to pair the elements from the middle to ends of the array
+        ArrayList<String> result = new ArrayList<>();
+        int mid = numbers.size() / 2;
+        int left,right;
+        if(numbers.size() % 2 == 1){
+            result.add(numbers.get(mid) + " " + "0");
+            left = mid - 1;
+            right = mid + 1;
+        } else{
+            left = mid - 1;
+            right = mid;
+        }
+        while(left >=0 && right < numbers.size()){
+            result.add(numbers.get(left--) + " " + numbers.get(right++));
+
+        }
+
+        return result;
+    }
 
 }
 
