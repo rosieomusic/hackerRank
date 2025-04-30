@@ -227,6 +227,33 @@ public class Main {
         }
         return insaneArray;
     }
+    // returning a group count of chars in reverse order
+    public List<String> solution(String s) {
+        // TODO: implement the algorithm to find consecutive groups of characters in the reverse order
+        List<String> result = new ArrayList<>();
+        char currentGroupChar = '\0';
+        int currentGroupLength = 0;
+        int i = s.length()-1;
+
+        while(i >= 0){
+            char c = s.charAt(i--);
+            if(currentGroupChar == c){
+                currentGroupLength +=1;
+            }else{
+                if(currentGroupChar != '\0'){
+                    result.add(currentGroupChar + " " + currentGroupLength);
+                }
+                currentGroupChar = c;
+                currentGroupLength = 1;
+            }
+
+
+        }
+        if(currentGroupChar != '\0'){
+            result.add(currentGroupChar + " " + currentGroupLength);
+        }
+        return result;
+    }
 
 }
 
