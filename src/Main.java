@@ -254,6 +254,23 @@ public class Main {
         }
         return result;
     }
+    public String reversedTripleChars(String s) {
+        // TODO: Implement the function that reforms the string as described above
+        int n = s.length();
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < n; i+=3) {
+            int end = Math.min(i + 3, n);
+            String segment = s.substring(i,end);
+            if(segment.length() == 3){
+                result.append(new StringBuilder(segment).reverse());
+            } else {
+                result.append(segment);
+            }
+        }
+        return result.toString();
+    }
+
+
 
 }
 
